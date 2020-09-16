@@ -33,6 +33,9 @@ functionName()
     - 5: INVOKE "on switch"
 */
 
+
+function isEven(i)
+
 //? Function Declaration
 // A chunk of code that performs a set action when it is invoked
 function funcOne(hgjfjhghjgnf) {
