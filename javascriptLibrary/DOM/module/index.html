@@ -1,0 +1,50 @@
+<!DOCTYPE html>     <!-- overall DOM HTML/doc page-->
+
+<html lang="eg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scaled=1.0">
+    <title>Intro to DOM Manipulation</title>
+</head>
+<body>
+    <!-- All of our HTML code will go here -->
+    <h1>Hello World</h1>
+    <p id="testParagraph">sample text</p>
+    <p class="sampleClass"></p>
+    
+    <label for="nameInput">Enter Your Name:</label>
+    <input type="text" id="nameInput" placeholder="John Smith" />
+
+    <p>Welcome!</p>
+    <p>No name has been entered</p> <br>
+    <button id="clickThisButton">I want to be clicked</button>
+
+    <script type="text/javascript">
+        /* All of our JavaScript code will go here */
+                          /*              (4)  (5)   */
+        document.getElementById('testParagraph').style.color = 'blue';
+/*                  (1)                          (2)    (3)      
+        1. element based on its ID
+        2. element property to control elements style
+        3. property of 'style' that we want to access
+        4. the assignment = operator to equal blue. 
+        5. ' in string to write it cause it's not a value
+*/
+document.getElementById('clickThisButton').addEventListener('click', () => {
+            console.log('I was clicked!');
+        });
+document.getElementById('clickThisButton').addEventListener('click', (details) => {
+     details.target.style.backgroundColor = 'red';
+});
+document.getElementById('nameInput').addEventListener('keyup', (event) => {
+        if (event.target.value === '') {
+            document.getElementsByTagName("p")[1].innerText = `No name has been entered`;
+        } else {
+            document.getElementsByTagName("p")[1].innerText = `Everyone please welcome ${event.target.value} to the stage.`;
+        }
+    });
+
+   </script>
+
+</body>
+</html>

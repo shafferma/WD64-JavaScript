@@ -11,7 +11,11 @@
         3) Change to the indexing variable (execution of condition)
 */
 
-//  (1) (2)       (3)     (4)
+// 1. Forloop
+// 2. initialization / variable
+// 3. condition/defining how long the loop will run
+// 4. final expression / logic that runs at the end of loop
+//  (1) (2)       (3)   (4)
 for(let i = 0; i <=10; i++) { // expressions
     console.log(i);
     if(i%2 == 0) {
@@ -29,11 +33,10 @@ for(let i = 0; i <=10; i++) {
     console.log(`the number is ${i%2 == 0 ? 'even' : 'odd'}`)
 }
 
+/*
 
-// 1. Forloop
-// 2. initialization / variable
-// 3. condition/defining how long the loop will run
-// 4. final expression / logic that runs at the end of loop
+
+*/
 
 /*
     We state our loop with a "for".

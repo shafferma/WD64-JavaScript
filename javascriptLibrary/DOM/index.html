@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang="eg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scaled=1.0">
+    <title>Intro to DOM Manipulation</title>
+</head>
+<body>
+    <!-- 
+        - DOM: Document Object Model
+            Allows our JS to interact with HTML and CSS.
+            Is an object-oriented representation of a web page, which can 
+            be modified by JS.
+
+            Two primary areas:
+            1. Making a model of an HTML page
+                - when the browser loads a webpage, it creates a model of the page
+                in memory.
+                - The DOM specifies the way in which the browser should structure
+                the model in what is call the DOM tree.
+                The DOM is called an object model because the DOM tree itself
+                is made up objects. 
+            2. Accessing and changing the HTML page
+                - the DOM also provides methods and properties to access and update 
+                each object in the model, which in turn updates what the user sees in the browser.
+    
+    ? ACCESSING
+        COMMON METHODS FOR ACCESSING A SINGLE ELEMENT
+            - getElementById()
+            -querySelector()
+
+        COMMON METHODS FOR ACCESSING MULTIPLE ELEMENTS:
+            -querySelectorAll()
+            -getElementByClassName()
+            -getElementByTagName()
+     
+    ? MANIPULATING
+        COMMON METHODSS FOR WORKING WITH HTML CONTENT
+            - innerHTML
+            - textConent
+            - createElement
+        
+        COMMON METHODS FOR WORKING WITH TAG ATTRIBUTES
+            - className / id
+            - setAttribute()
+            - getAttribute()
+
+     
+    -->
+<h1>Hello World</h1>
+
+<!-- ! 1: getElementById -->
+<p id="testParagraph">Sample Text</p>
+
+<!-- ! 2: query selector all / inner -->
+<p class="sampleClass">A class paragraph</p>
+<p class="sampleClass">A class paragraph</p>
+<p class="sampleClass">A class paragraph</p>
+<p class="sampleClass">A class paragraph</p>
+<!-- p.sampleClass*4 -->
+
+<span id="spanTest">Hello
+    <span style="display:none;">World</span>
+</span>
+<br>
+<hr>
+
+<!-- ! 3: addEventListener -->
+    <button id="clickThis">Click</button>
+    <br>
+    <hr>
+
+<!-- ! 4: keyup -->
+<label for="nameInput">Enter Your Name:</label> <br>
+<input type="text" id="nameInput" placeholder="Your Name Here">
+
+<!-- MY JS -->
+<script src="script.js"></script>
+
+</body>  
+</html>
+
+
+<!--
+
+- event listener waits for an event to happen on an element 
+(such as waiting for a click event on a button or a keypress event on an input field)
+
+
+-->>
