@@ -16,7 +16,7 @@
 // 3. condition/defining how long the loop will run
 // 4. final expression / logic that runs at the end of loop
 //  (1) (2)       (3)   (4)
-for(let i = 0; i <=10; i++) { // expressions
+for(let i = 0; i <= 10; i++) { // expressions
     console.log(i);
     if(i%2 == 0) {
         console.log('the number is even')
