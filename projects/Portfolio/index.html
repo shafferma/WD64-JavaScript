@@ -7,12 +7,12 @@
     <!--- BOOTSTRAP -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <!--- My CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
     <title>Portfolio</title>
 </head>
 <body> 
 <!--- NAVBAR --->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
     <a class="navbar-brand" href="#"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -40,9 +40,9 @@
 
 
 
-  <div class="link-icon">
-    <a class="linkedin-icon" href="#"><img src="assests/linkedin-icon.png"></a>
-    <a class="cat-icon" href="#"><img src="assests/GitHub-Mark.png"></a>
+  <div class="social">
+    <a class="linkedin" href="#"><img src="assests/linkedin-icon.png"></a>
+    <a class="cat" href="#"><img src="assests/GitHub-Mark.png"></a>
   </div>
 
 
@@ -61,7 +61,7 @@
       <input type="text" name="name" id="full-name" placeholder="First and Last" required="">
       <label for="email-address">Email Address</label>
       <input type="email" name="_replyto" id="email-address" placeholder="shafferma12@gmail.com" required="">
-      <label for="message">Message</label>
+      <label for="message">Drop me a line.</label>
       <textarea rows="5" name="message" id="message" placeholder="Aenean lacinia bibendum nulla sed consectetur. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla nullam quis risus." required=""></textarea>
       <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
     </fieldset>
