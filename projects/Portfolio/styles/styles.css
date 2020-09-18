@@ -15,15 +15,36 @@ body {
 }
 
 .container img {
-  position: absolute;
-  height: 400px;
+  width: 100%;
 }
 
 .container {
-  position: absolute;
+ position: relative;
+ width: 420px;
+ padding: 0;
+ overflow: hidden;
+ border-radius: 20px;
+}
+
+.container:hover .overlay {
+  height: 100%;
+  top: 0;
 }
 
 .form {
-  display: flex
+  display: flex;
   position: absolute;
+}
+
+.overlay {
+  position: absolute;
+  top: -10px;
+  right: 0;
+  background-color: lightblue;
+  height: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: height .8s ease-in-out, top 1s;
 }
