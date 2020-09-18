@@ -10,3 +10,20 @@ body {
     width: 25px;
 }
 
+.social {
+  position: relative;
+}
+
+.container img {
+  position: absolute;
+  height: 400px;
+}
+
+.container {
+  position: absolute;
+}
+
+.form {
+  display: flex
+  position: absolute;
+}
