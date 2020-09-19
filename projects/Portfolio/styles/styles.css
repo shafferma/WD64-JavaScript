@@ -3,37 +3,100 @@ body {
 }
 
 .navbar {
-    align-content: flex-end;
+   
 }
 
-.social img {
-    width: 25px;
+
+
+
+/* slider styles */
+
+.slider {
+  overflow: hidden;
 }
 
-.social {
+.slides {
+  display: flex;
   position: relative;
+  left: 0%;
+  animation: slides 12s infinite;
 }
 
-.container img {
+.slides:hover {
+  animation-play-state: paused;
+}
+
+.slide {
+  height: 420px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.slide img {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: botom;
+}
+
+@keyframes slides {
+  0% { 
+    left: 0%;
+  }
+  30% {
+    left: 0%;
+  }
+  35% {
+    left: -100%;
+  }
+  65% {
+    left: -100%;
+  }
+  70% {
+    left: -200%;
+  }
+  100% {
+    left: -200%;
+  }
+}
+
+
+
+.content {
+  height: 100%;
+  align-items: center;
+  padding: 20px;
+  background-color: lightgray;
+  width: 350px;
+  margin-right: 180px;
+}
+
+.quote img {
   width: 100%;
 }
 
-.container {
+.quote {
  position: relative;
  width: 420px;
  padding: 0;
  overflow: hidden;
  border-radius: 20px;
+ border: white solid 12px;
 }
 
-.container:hover .overlay {
+.main {
+  margin-top: -300px;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.quote:hover .overlay {
   height: 100%;
   top: 0;
-}
-
-.form {
-  display: flex;
-  position: absolute;
 }
 
 .overlay {
@@ -47,4 +110,41 @@ body {
   justify-content: center;
   align-items: center;
   transition: height .8s ease-in-out, top 1s;
+}
+
+#fs-frm {
+  margin: 0 auto;
+  padding: 20px;
+}
+
+#fs-frm-inputs {
+  display: flex;
+  flex-direction: column;
+}
+input, textarea {
+  width: 100%;
+}
+
+input[type=submit] {
+  background-color: #4a96c2;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 4px;
+  margin: 8px 0;
+  width: 180px;
+}
+
+input[type=submit]:hover {
+  background-color: #a876d1;
+  transition: .4s eas;
+}
+
+
+.social img {
+  width: 25px;
+}
+
+.social {
+position: relative;
 }
