@@ -2,6 +2,10 @@ body {
   padding-top: 56px;  
 }
 
+img {
+  max-width: 100%;
+}
+
 .navbar {
    
 }
@@ -86,7 +90,7 @@ body {
 }
 
 .main {
-  margin-top: -300px;
+  margin-top: -220px;
 }
 
 .row {
@@ -139,6 +143,24 @@ input[type=submit]:hover {
   background-color: #a876d1;
   transition: .4s eas;
 }
+
+/* Portfolio styles*/
+
+.portfolio {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.portfolio-item {
+  width: 400px;
+  margin: 0 10px;
+}
+
+.portfolio-item p {
+  text-align: center;
+}
+
 
 
 .social img {
