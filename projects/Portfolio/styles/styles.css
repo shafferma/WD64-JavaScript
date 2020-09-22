@@ -117,6 +117,7 @@ img {
 #fs-frm {
   margin: 0 auto;
   padding: 20px;
+  width: 500px;
 }
 
 #fs-frm-inputs {
@@ -140,6 +141,10 @@ input[type=submit] {
 input[type=submit]:hover {
   background-color: #a876d1;
   transition: .4s eas;
+}
+
+label {
+  display: none;
 }
 
 /* Portfolio styles*/
