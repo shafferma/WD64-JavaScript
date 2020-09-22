@@ -45,10 +45,29 @@ funcOne(9);
 // funcOne(5);
 // funcOne(4);
 
-function beep (x, y) {
-    console.log(x + y);
+
+
+// 1. create function
+function beep(x, y) {              
+    let val = x + y;
+    console.log(val);
 }
-beep(1, 2);
+// 2. use function
+beep(1, 2);         
+
+
+function subtractBeep(x) { // sum = 3
+    return x - 1 // 3 - 1 = 2
+}
+
+function boop(r, e) { // 1, 2
+    let sum = r + e; // sum = 3
+    console.log(subtractBeep(sum)); // 2
+}
+
+boop(1, 2); // 2
+boop(5, 1); // 5
+
 
 
 function subtract (x) {
