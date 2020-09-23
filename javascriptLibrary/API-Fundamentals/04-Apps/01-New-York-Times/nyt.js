@@ -82,7 +82,7 @@ function fetchResults(e) {
 
     // Bonus Challenge
 
-
+    
 
     if(articles.length === 10) {
       nav.style.display = 'block'; //shows the nav display if 10 items are in the array

@@ -1,5 +1,7 @@
 body {
   padding-top: 56px;  
+  font-style: oblique;
+  font-size: 18px;
 }
 
 img {
@@ -124,6 +126,7 @@ img {
   display: flex;
   flex-direction: column;
 }
+
 input, textarea {
   width: 100%;
 }
@@ -165,11 +168,25 @@ label {
 }
 
 
-
 .social img {
   width: 25px;
 }
 
 .social {
 position: relative;
+display: flex;
+justify-content: center;
+padding-top: 50px;
+}
+
+.bottom-nav {
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+.bottom-nav a {
+  padding: 10px;
+  color: black;
+  text-decoration: none;
 }
