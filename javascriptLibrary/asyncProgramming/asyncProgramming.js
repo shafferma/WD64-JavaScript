@@ -94,3 +94,33 @@ console.log(
     We see that in the showGreeting(callbackFunction()) line of code, we are invoking the function that we created above called callbackFunction().
     The purpose of our showGreeting() function is to return a string that is built with data that will be coming from our argument.
 */
+
+
+
+
+/**
+ * Personal Notes
+ */
+
+
+// concise function
+response => response.json()
+(response) => response.json()
+() => console.log('pewp')
+
+// the concise function written out with a block body; block body is {}
+function(response) {
+  return response.json()
+}
+
+// example 1
+fetch(url)
+  .then(response => response.json())
+  .then(data => console.log(data));
+
+// example 2
+fetch(url)
+    .then(function(response) {
+    return response.json()
+  })
+  .then(data => console.log(data));
