@@ -3,6 +3,8 @@ const baseUrl = 'https://pokeapi.co/api/v2/pokemon/';
 const catchMeBtn = document.querySelector('.catch-me button');
 const pokemonImage = document.querySelector('.catch-me img')
 const pokemonName = document.querySelector('#name')
+const pokemonNumber = document.querySelector('number')
+const pokemonType = document.querySelector('#types')
 
 // console.log(catchMeBtn);
 // console.log({pokemonImage})
@@ -30,6 +32,8 @@ function getAndDisplayRandomPokemon() {
             console.log(data.name)
             
             pokemonName.textContent = data.name
+            
+            pokemonType.textContent = data.types
         
         })
 }
