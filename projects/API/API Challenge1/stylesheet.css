@@ -16,10 +16,12 @@ button {
     border-radius: 60px;
     border-style: hidden;
     align-self: center;
+    font-family: cursive;
+    outline: none;
 }
 
 button:hover {
-    
+    background-color: lightgreen;
 }
 
 .content {

@@ -1,5 +1,5 @@
 
-const baseUrl = 'https://pokeapi.co/api/v2/pokemon/'; // string
+const baseUrl = 'https://pokeapi.co/api/v2/pokemon/'; // 'string'
 const catchMeBtn = document.querySelector('.catch-me button');
 const pokemonImage = document.querySelector('.catch-me img')
 const pokemonName = document.querySelector('#name')
@@ -37,7 +37,7 @@ function getAndDisplayRandomPokemon() {
         
             for (index in data.types) {
                 console.log(index)
-                //console.log(.type.name);
+                
                 let typeObject = data.types[index]
                 console.log(typeObject)
                 console.log(typeObject.type)
@@ -47,6 +47,7 @@ function getAndDisplayRandomPokemon() {
                 let span = document.createElement('span'); 
                 span.textContent = typeObject.type.name;   
                 pokemonType.appendChild(span);
+              
 
             }
             
@@ -54,7 +55,7 @@ function getAndDisplayRandomPokemon() {
         
         })
 }
-
+//so we don't get decimals - whole number
 function getRandomPokemonId(maxId) {
     return Math.floor(Math.random() * Math.floor(maxId))
 }
