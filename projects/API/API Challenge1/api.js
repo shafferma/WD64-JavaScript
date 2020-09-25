@@ -1,9 +1,9 @@
 
-const baseUrl = 'https://pokeapi.co/api/v2/pokemon/'; 
+const baseUrl = 'https://pokeapi.co/api/v2/pokemon/'; // string
 const catchMeBtn = document.querySelector('.catch-me button');
 const pokemonImage = document.querySelector('.catch-me img')
 const pokemonName = document.querySelector('#name')
-const pokemonNumber = document.querySelector('number')
+const pokemonNumber = document.querySelector('#number')
 const pokemonType = document.querySelector('#types')
 
 // console.log(catchMeBtn);
@@ -24,16 +24,33 @@ function getAndDisplayRandomPokemon() {
         })
         .then(function(data) {
             // we have access to our pokemon data in here
-
+            console.log('pokemon', data)
 
             // pokemon image url string
             pokemonImage.src = data.sprites.other['official-artwork'].front_default
             
+            pokemonNumber.textContent = data.id
+
             console.log(data.name)
             
             pokemonName.textContent = data.name
+        
+            for (index in data.types) {
+                console.log(index)
+                //console.log(.type.name);
+                let typeObject = data.types[index]
+                console.log(typeObject)
+                console.log(typeObject.type)
+                console.log(typeObject.type.name)
+                //console.log(type.name)
+
+                let span = document.createElement('span'); 
+                span.textContent = typeObject.type.name;   
+                pokemonType.appendChild(span);
+
+            }
             
-            pokemonType.textContent = data.types
+        
         
         })
 }
