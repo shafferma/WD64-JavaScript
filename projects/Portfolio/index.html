@@ -11,6 +11,7 @@
     <title>Portfolio</title>
 </head>
 <body> 
+
 <!--- NAVBAR --->
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
     <a class="navbar-brand" href="#"></a>
@@ -29,7 +30,7 @@
           <a class="nav-link" href="#portfolio">Portfolio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#form">Contact</a>
+          <a class="nav-link" href="#fs-frm">Contact</a>
         </li>
         <!-- <li class="nav-item">
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
@@ -37,9 +38,12 @@
       </ul>
     </div>
   </nav>
-
-
-
+<!-- BOOTSTRAP-->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<!-- MY SCRIPTS -->
+<script src="./javascript.js"></script>
 
   <!-- this is our slider -->
   <div class="slider">
@@ -72,9 +76,11 @@
 
   
 <div class="main container">
-  <div class="row align-items-end">
+  <div class="row align-items-end" id="about">
     <div class="content col">
-          <p>Hello....this is a little about me.</p>
+          <p>Hello....this is a little about me.
+          </p>
+          <p>You can find my code on Github , and learn more about my experience on Linkedin.</p>
     </div> 
 
 
@@ -111,7 +117,7 @@
 <br>
 
 
-  <div class="portfolio">
+  <div class="portfolio" id="portfolio">
 
     <a class="portfolio-item" href="https://shafferma.github.io/1150-static-layout/">
       <img src="assests/portfolio-static-layout.jpg"/>
@@ -130,6 +136,26 @@
     
   </div>
   
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<div class="bottom-nav">
+  <a href="https://drive.google.com/file/d/10djIQNmTn21zcj2D7Nz9YiGOZg_VbI27/view?usp=sharing">Download Resume</a>
+</div>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 
 
@@ -148,18 +174,13 @@
   </form>
 
 
-  <div class="social">
-    <a class="linkedin" href="#"><img src="assests/linkedin-icon.png"></a>
-    <a class="cat" href="#"><img src="assests/GitHub-Mark.png"></a>
-  </div>
 
-
-  <div class="bottom-nav">
-    <a href="https://drive.google.com/file/d/10djIQNmTn21zcj2D7Nz9YiGOZg_VbI27/view?usp=sharing">Download Resume</a>
-  </div>
 
   <footer>
+   <p class="copyright"></p>
+   <a class="copy-link scroll-top" href>© Ashley Shaffer 2020</a>
    
+
   </footer>
 
   </body>

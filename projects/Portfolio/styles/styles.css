@@ -132,18 +132,20 @@ input, textarea {
 }
 
 input[type=submit] {
-  background-color: #4a96c2;
+  background-color: #8d72e6;
   color: white;
   padding: 10px 16px;
   border: none;
   border-radius: 4px;
   margin: 8px 0;
   width: 180px;
+  font-style: oblique;
 }
 
 input[type=submit]:hover {
-  background-color: #a876d1;
-  transition: .4s eas;
+  background-color: #78e47d;
+  color: black;
+  transition: .8s eas;
 }
 
 label {
@@ -183,10 +185,22 @@ padding-top: 50px;
   display: flex;
   justify-content: center;
   text-transform: uppercase;
+  
 }
 
 .bottom-nav a {
   padding: 10px;
   color: black;
+  text-decoration: none;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+  letter-spacing: .2em;
+}
+
+footer:hover {
   text-decoration: none;
 }

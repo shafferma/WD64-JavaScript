@@ -3,6 +3,12 @@ body {
     margin: 0;
 }
 
+.banner img {
+ height: 200px;
+ display: flex;
+ justify-content: center;
+}
+
 button {
     background-image: url('assests/pokemon-ball.png');
     background-size: 60px;
