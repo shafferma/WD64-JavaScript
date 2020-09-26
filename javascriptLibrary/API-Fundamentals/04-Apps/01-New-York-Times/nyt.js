@@ -15,7 +15,7 @@ const previousBtn = document.querySelector('.prev');
 const nav = document.querySelector('nav');
 
 //RESULTS SECTION
-const section = document.querySelector('section');
+const section = document.querySelector('section'); 
 
 nav.style.display = 'none';
 let pageNumber = 0;
@@ -68,7 +68,7 @@ function fetchResults(e) {
     });
 
   function displayResults(json) {
-    while (section.firstChild) {    //everytime you hit search .firstchild whatrver section that targets(element)so they don't stack
+    while (section.firstChild) {    // looping through 10 x 
       section.removeChild(section.firstChild); //1
     }
     let articles = json.response.docs;
