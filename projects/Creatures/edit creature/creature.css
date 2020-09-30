@@ -104,12 +104,12 @@ body {
 } 
 
 .arm1, .arm2 {
-    background-color: brown;
+    background-color: rgb(134, 79, 7);
     height: 4px;
     width: 110px;
     position: absolute;
     transform: rotate(35deg);
-    bottom: 140px;
+    bottom: 180px;
     right: 180px;
 }
 
@@ -120,11 +120,32 @@ body {
 }
 
 .left-hand, .right-hand {
-    background-color: brown;
+    background-color: rgb(134, 79, 7);
     position: relative;
     width: 4px;
     height: 20px;
     transform: rotate(120deg);
-    bottom: 15px;
+    bottom: 13px;
     left: 20px;
+}
+
+.scarf {
+    width: 30px;
+    position: relative;
+    border-bottom: 40px solid plum;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+    bottom: 185px;
+    transform: rotate(20deg);
+}
+
+.scarf-1 {
+    background-color: plum;
+    height: 20px;
+    width: 100px;
+    border-radius: 20px;
+    position: relative;
+    bottom: 35px;
+    right: 8px;
+    transform: rotate(160deg);
 }
