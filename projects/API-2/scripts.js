@@ -10,7 +10,9 @@ fetch(url)
         return response.json()
     })
     .then(
-        function(json){
-        console.log(json)
+        function(data){
+        console.log(data)
         }
-    ) 
+    ) // we have access to data 
+
+   

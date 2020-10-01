@@ -74,6 +74,23 @@ img {
   background-color: lightgray;
   width: 350px;
   margin-right: 180px;
+  color: black;
+}
+
+.content a{
+  color: black;
+}
+
+.github-link:hover {
+  text-decoration: none;
+  color: purple;
+  transition-delay: .3s;
+}
+
+.linkedin-link:hover {
+  text-decoration: none;
+  color: blue;
+  transition-delay: .2s;
 }
 
 .quote img {

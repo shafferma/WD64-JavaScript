@@ -5,7 +5,9 @@ body {
 }
 
 .snowman {
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 
@@ -87,7 +89,6 @@ body {
     width: 150px;
     height: 150px;
     top: -10px;
-    right: 25px;
 }
 
 
@@ -109,14 +110,14 @@ body {
     width: 110px;
     position: absolute;
     transform: rotate(35deg);
-    bottom: 180px;
-    right: 180px;
+    bottom: 160px;
+    right: 160px;
 }
 
 .arm2 {
     right: auto;
     transform: rotate(135deg);
-    left: 130px;
+    left: 160px;
 }
 
 .left-hand, .right-hand {
@@ -130,22 +131,33 @@ body {
 }
 
 .scarf {
-    width: 30px;
-    position: relative;
-    border-bottom: 40px solid plum;
-    border-right: 8px solid transparent;
-    border-left: 8px solid transparent;
-    bottom: 185px;
-    transform: rotate(20deg);
-}
-
-.scarf-1 {
     background-color: plum;
     height: 20px;
     width: 100px;
     border-radius: 20px;
+    position: absolute;
+    bottom: 0;
+    margin-left: -50px;
+    left: 50%;
+    z-index: 1;
+}
+.scarf-1 {
+    width: 30px;
     position: relative;
-    bottom: 35px;
-    right: 8px;
-    transform: rotate(160deg);
+    top: 10px;
+    border-bottom: 40px solid plum;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+    transform: rotate(20deg);
+    z-index: 1;
+    left: -2px;
+}
+
+.snow {
+ 
+}
+
+.snow-fall {
+    background:url("assests/snowfall.jpg");
+
 }
