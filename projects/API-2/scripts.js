@@ -6,6 +6,7 @@ let url = baseUrl + 'nearest_city?key=' + key
 const weatherImageElement = document.querySelector('.weather');
 let locationEl = document.querySelector('.coordinates');
 let temperatureEl = document.querySelector('#temperature')
+// let windSpeedEl = document.querySelector('.wind-speed')
 
 fetch(url)
     .then(function(response) {
@@ -15,11 +16,9 @@ fetch(url)
         function(data){
             console.log(data)               // we have access to data 
 
-            //
-            
             let city = data.data.city
             let state = data.data.state
-            let location = city + ", " + state
+            let location = city + ", " + state 
 
             locationEl.textContent = location
 
@@ -28,12 +27,17 @@ fetch(url)
             weatherImageElement.src = getWeatherImage(weatherCode)
 
             let temperature = data.data.current.weather.tp
-            temperatureEl.innerHTML = temperature + '&#8451;'
-
-
-
+            temperatureEl.innerHTML = temperature + ' &#8451;'
+            
+            // let wind = data.data.current.weather.ws
+            // windSpeedEl.innerHTML = wind + ' wind-speed'
         }
     ) 
+
+    // function convertToF {
+    //
+    // }
+    
 
 
 

@@ -13,8 +13,8 @@
             }
             body {
                 height: 100%;
-                background: rgb(210,201,248);
-                background: radial-gradient(circle, rgba(210,201,248,1) 0%, rgba(118,84,140,1) 100%);
+                background: rgb(110, 96, 172);
+                /* background: radial-gradient(circle, rgba(210,201,248,1) 0%, rgba(118,84,140,1) 100%); */
                 background-size: cover;
                 background-repeat: no-repeat;
             }
@@ -24,13 +24,17 @@
                 background: radial-gradient(circle, rgba(183,156,237,1) 0%, rgba(230,221,249,1) 100%);
             }
 
+            .img {
+                background-color: transparent;
+            }
+
         </style>
     </head>
     <body>
 
         <BR>
 
-        <div id="content" class="d-flex flex-column justify-content-between container-sm">
+        <div id="content" class="d-flex flex-column justify-content-between container-md rounded-circle" style="padding: 60px; font-family: monospace; font-size: 20px;">
 
             <p class="p-4 align-self-center"style="">
                 <img class="weather"/>
@@ -44,7 +48,7 @@
                 Location
             </p>
             
-            <!-- <p class="p-3 align-self-center">Search</p> -->
+            <!-- <p class="p-3 wind-speed align-self-center" style="font-style: italic;">Wind Speed</p> -->
 
         </div>
 
