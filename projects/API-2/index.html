@@ -7,17 +7,45 @@
         <!--- BOOTSTRAP -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">  
         <title>API #2</title>
+        <style>
+            html {
+                height: 100%;
+            }
+            body {
+                height: 100%;
+                background: rgb(210,201,248);
+                background: radial-gradient(circle, rgba(210,201,248,1) 0%, rgba(118,84,140,1) 100%);
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            #content {
+                background: rgb(183,156,237);
+                background: radial-gradient(circle, rgba(183,156,237,1) 0%, rgba(230,221,249,1) 100%);
+            }
+
+        </style>
     </head>
     <body>
 
         <BR>
 
-        <div class="d-flex flex-column justify-content-between" style="background-color: lightblue; height: 100%;">
-            <p class="p-4 align-self-center"style="background-color: azure;"><img src="./assests/clear-sky(day).png"></p>
-            <button type="button" class="btn btn-outline-dark btn-sm">Today's Forcast</button>
-            <p id="weather" class="p-3 align-self-center" style="background-color: azure;">Weather</p>
-            <p class="p-3 coordinates align-self-center" style="background-color: azure;">Location</p>
-            <!-- <p class="p-3 align-self-center" style="background-color: azure;">Wind Speed</p> -->
+        <div id="content" class="d-flex flex-column justify-content-between container-sm">
+
+            <p class="p-4 align-self-center"style="">
+                <img class="weather"/>
+            </p>
+            
+            <p id="temperature" class="p-3 align-self-center" style="">
+                Temperature
+            </p>
+            
+            <p class="p-3 coordinates align-self-center" style="">
+                Location
+            </p>
+            
+            <!-- <p class="p-3 align-self-center">Search</p> -->
+
         </div>
 
 
