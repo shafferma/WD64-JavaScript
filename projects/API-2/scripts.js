@@ -3,9 +3,10 @@ const key = '923d352f-e187-47c0-9271-9f7ae9884c85';
 let url = baseUrl + 'nearest_city?key=' + key 
 
 // image element
-const weatherImageElement = document.querySelector('.weather');
-let locationEl = document.querySelector('.coordinates');
-let temperatureEl = document.querySelector('#temperature')
+const weatherIconElement = document.querySelector('#weather');
+const cityEl = document.querySelector('#city');
+const stateEl = document.querySelector('#state');
+const temperatureEl = document.querySelector('#temperature')
 // let windSpeedEl = document.querySelector('.wind-speed')
 
 fetch(url)
@@ -18,16 +19,16 @@ fetch(url)
 
             let city = data.data.city
             let state = data.data.state
-            let location = city + ", " + state 
 
-            locationEl.textContent = location
+            cityEl.textContent = city
+            stateEl.textContent = state
 
 
             let weatherCode = data.data.current.weather.ic
-            weatherImageElement.src = getWeatherImage(weatherCode)
+            weatherIconElement.className = getWeatherIcon(weatherCode)
 
             let temperature = data.data.current.weather.tp
-            temperatureEl.innerHTML = temperature + ' &#8451;'
+            temperatureEl.innerHTML = temperature + '<span>&deg;</span>'
             
             // let wind = data.data.current.weather.ws
             // windSpeedEl.innerHTML = wind + ' wind-speed'
@@ -41,59 +42,59 @@ fetch(url)
 
 
 
-function getWeatherImage(weatherIconIndex) {
+function getWeatherIcon(weatherIconIndex) {
 
-    let imageName = ''
+    let iconName = ''
 
     switch(weatherIconIndex) {
         case '01d':
-            imageName = 'clear-sky(day)'
+            iconName = 'sun'
             break;
 
         case '01n':
-            imageName = 'clear-sky(night)'
+            iconName = 'moon'
         break;
     
         case '02d':
-            imageName = 'few-clouds(day)'
+            iconName = 'cloud-sun'
         break;
     
         case '02n':
-            imageName = 'few-clouds(night)'
+            iconName = 'cloud-moon'
         break;
     
         case '03d':
-            imageName = 'scattered-clouds'
+            iconName = 'cloud-sun'
         break;
     
         case '03n':
-            imageName = 'scattered-clouds'
+            iconName = 'cloud-moon'
         break;
 
         case '04d':
-            imageName = 'broken-clouds'
+            iconName = 'cloud'
         break;
     
         case '04n':
-            imageName = 'broken-clouds'
+            iconName = 'cloud'
         break;
     
         case '09d':
-            imageName = 'shower-rain'
+            iconName = 'cloud-rain'
         break;
 
         case '09n':
-            imageName = 'shower rain'
+            iconName = 'cloud rain'
         break;
 
         case '10d':
-            imageName = 'rain (day time)'
+            iconName = 'cloud-sun-rain'
         break;
 
         case '10n':
-            imageName = 'rain (night time)'
+            iconName = 'cloud-moon-rain'
         break;
     }
 
-    return 'assests/' + imageName + '.png'
+    return 'fas fa-' + iconName
 }

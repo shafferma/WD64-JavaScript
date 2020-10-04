@@ -7,56 +7,88 @@
         <!--- BOOTSTRAP -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">  
         <title>API #2</title>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/c11887518d.js" crossorigin="anonymous"></script>
+
         <style>
             html {
                 height: 100%;
             }
             body {
                 height: 100%;
-                background: rgb(110, 96, 172);
-                /* background: radial-gradient(circle, rgba(210,201,248,1) 0%, rgba(118,84,140,1) 100%); */
-                background-size: cover;
+                background: rgb(171,157,255);
+                background: radial-gradient(circle at top, rgba(171,157,255,1) -10%, rgba(117,96,244,1) 50%);
+                /* background-size: cover; */
                 background-repeat: no-repeat;
             }
 
             #content {
-                background: rgb(183,156,237);
-                background: radial-gradient(circle, rgba(183,156,237,1) 0%, rgba(230,221,249,1) 100%);
+                /* background: rgb(183,156,237);
+                background: radial-gradient(circle, rgba(183,156,237,1) 0%, rgba(230,221,249,1) 100%); */
             }
 
-            .img {
-                background-color: transparent;
+            #temperature {
+                font-family: 'Oswald', sans-serif;
+                font-size: 160px;
+                font-weight: 700;
+                position: relative;
+
+                background: -webkit-linear-gradient(rgb(255, 255, 255) 0%, rgba(117,96,244,1) 120%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                line-height: 100%;
             }
 
+            #temperature span {
+                position: absolute;
+                top: -12px;
+                font-size: 140px;
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: 900;
+                background: -webkit-linear-gradient(rgb(255, 255, 255) 22%, rgba(117,96,244,1) 65%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            #weather {
+                position: relative;
+                top: -70px;
+                font-size: 130px;
+                background: -webkit-linear-gradient(rgb(255, 255, 255) 10%, rgb(133, 189, 253) 55%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            
         </style>
+        
     </head>
-    <body>
+    <body class="text-white d-flex flex-column justify-content-center">
 
-        <BR>
+        <div id="content" class="d-flex flex-column container-md">
 
-        <div id="content" class="d-flex flex-column justify-content-between container-md rounded-circle" style="padding: 60px; font-family: monospace; font-size: 20px;">
+            
+            <p id="city" class="h4 align-self-center font-weight-bold p-2">
+                City
+            </p>
 
-            <p class="p-4 align-self-center"style="">
-                <img class="weather"/>
+            <p id="state" class="align-self-center">
+                State
             </p>
             
-            <p id="temperature" class="p-3 align-self-center" style="">
+            <p id="temperature" class="align-self-center">
                 Temperature
             </p>
-            
-            <p class="p-3 coordinates align-self-center" style="">
-                Location
+
+            <p class="p-4 align-self-center">
+
+                <i id="weather" class="fas fa-bolt"></i>
+
             </p>
             
             <!-- <p class="p-3 wind-speed align-self-center" style="font-style: italic;">Wind Speed</p> -->
 
         </div>
-
-
-        <!-- BOOTSTRAP-->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
         <!-- MY SCRIPTS -->
         <script src="./scripts.js"></script>
