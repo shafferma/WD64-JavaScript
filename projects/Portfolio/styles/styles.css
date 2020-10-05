@@ -1,15 +1,20 @@
+
+
+
 body {
   padding-top: 56px;  
   font-style: oblique;
+  font-family: 'Indie Flower', cursive;
   font-size: 18px;
+  background: hsla(186, 28%, 93%, 1);
+  background: linear-gradient(135deg, hsla(186, 28%, 93%, 0.9) 10%, hsla(119, 66%, 82%, 1) 25%, hsla(127, 16%, 55%, 1) 50%, hsla(148, 20%, 24%, 1) 75%, hsla(195, 100%, 7%, 1) 100%);
+  background: -moz-linear-gradient(135deg, hsla(186, 28%, 93%, 0.9) 10%, hsla(119, 66%, 82%, 1) 25%, hsla(127, 16%, 55%, 1) 50%, hsla(148, 20%, 24%, 1) 75%, hsla(195, 100%, 7%, 1) 100%);
+  background: -webkit-linear-gradient(135deg, hsla(186, 28%, 93%, 0.9) 10%, hsla(119, 66%, 82%, 1) 25%, hsla(127, 16%, 55%, 1) 50%, hsla(148, 20%, 24%, 1) 75%, hsla(195, 100%, 7%, 1) 100%);
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#e8f1f2", endColorstr="#b3efb2", GradientType=1 );
 }
 
 img {
   max-width: 100%;
-}
-
-.navbar {
-   
 }
 
 
@@ -32,7 +37,7 @@ img {
 
 .slide {
   position: relative;
-  height: 50vh;
+  height: 55vh;
   width: 100%;
   flex-shrink: 0;
 }
@@ -41,9 +46,13 @@ img {
     position: absolute;
     color: white;
     z-index: 1;
-    bottom: 50px;
-    font-size: 24px;
+    bottom: 10px;
+    font-size: 22px;
     font-weight: bold;
+    left: 20px;
+    background-color: rgb(41, 156, 80);
+    border-radius: 50px;
+    padding: 5px;
 }
 
 .slide img {
@@ -51,7 +60,7 @@ img {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  object-position: botom;
+  object-position: 50% 35%;
 }
 
 @keyframes slides {
@@ -75,8 +84,6 @@ img {
   }
 }
 
-
-
 .content {
   height: 100%;
   align-items: center;
@@ -85,7 +92,14 @@ img {
   width: 350px;
   margin-right: 180px;
   color: black;
+  border-radius: 20px;
+  border-style: double;
+  border-color: green;
+  background: rgb(246,255,248);
+  background: radial-gradient(circle, rgba(246,255,248,1) 0%, rgba(164,195,178,1) 100%);
+  font-family: 'indie';
 }
+
 
 .content a{
   color: black;
@@ -93,11 +107,16 @@ img {
 
 .github-link:hover {
   text-decoration: none;
-  color: purple;
+  color: blue;
   transition-delay: .3s;
 }
 
 .linkedin-link:hover {
+  text-decoration: none;
+  color: blue;
+  transition-delay: .2s;
+}
+.resume-link:hover {
   text-decoration: none;
   color: blue;
   transition-delay: .2s;
@@ -114,10 +133,13 @@ img {
  overflow: hidden;
  border-radius: 20px;
  border: white solid 12px;
+ font-family: 'Dancing Script';
+ font-size: 20px;
+ 
 }
 
 .main {
-  margin-top: -220px;
+  margin-top: -180px;
 }
 
 .row {
@@ -132,15 +154,25 @@ img {
 
 .overlay {
   position: absolute;
-  top: -10px;
+  top: -50px;
   right: 0;
-  background-color: lightblue;
+  background: rgb(246,255,248);
+  background: radial-gradient(circle, rgba(246,255,248,1) 0%, rgba(164,195,178,1) 100%);
+  font-weight: 700;
   height: 0;
   width: 100%;
   display: flex;
   justify-content: center;
+  text-align: center;
   align-items: center;
   transition: height .8s ease-in-out, top 1s;
+}
+
+.contact-header {
+  text-align: center;
+  font-size: 25px;
+  position: relative;
+  margin-bottom: -40px;
 }
 
 #fs-frm {
@@ -159,7 +191,7 @@ input, textarea {
 }
 
 input[type=submit] {
-  background-color:  rgb(206, 179, 241);
+  background-color: #c8c8c8;
   color: black;
   padding: 10px 16px;
   border: none;
@@ -167,10 +199,11 @@ input[type=submit] {
   margin: 8px 0;
   width: 180px;
   font-style: oblique;
+  font-size: 22px;
 }
 
 input[type=submit]:hover {
-  background-color: #9ce499;
+  background-color: rgb(206, 179, 241);
   color: black;
   transition: .8s eas;
 }
@@ -180,6 +213,13 @@ label {
 }
 
 /* Portfolio styles*/
+
+.portfolio-header {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  font-size: 50px;
+}
 
 .portfolio {
   display: flex;
@@ -191,11 +231,15 @@ label {
   width: 400px;
   margin: 0 10px;
 }
+.portfolio img {
+  border-radius: 20px;
+}
 
 .portfolio-item p {
   text-align: center;
+  color: #42047e;
+  font-weight: 500;
 }
-
 
 .social img {
   width: 25px;
@@ -216,6 +260,8 @@ padding-top: 50px;
   background-color: rgb(206, 179, 241);
   width: 200px;
   margin-left: 500px;
+  font-size: 16px;
+  font-family: 'Architects Daughter', cursive;
 }
 
 .bottom-nav a {
@@ -225,10 +271,10 @@ padding-top: 50px;
  
 }
 
-.bottom-nav:hover {
+/* .bottom-nav:hover {
   background-color:  #9ce499;
   transition-duration: .3s;
-}
+} */
 
 footer {
   display: flex;
@@ -240,4 +286,9 @@ footer {
 footer:hover {
   text-decoration: none;
 
+}
+
+.copy-link {
+  padding: 20px;
+  font-size: 12px;
 }
