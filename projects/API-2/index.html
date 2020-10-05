@@ -39,7 +39,7 @@
                 line-height: 100%;
             }
 
-            #temperature span {
+            .degree {
                 position: absolute;
                 top: -12px;
                 font-size: 140px;
@@ -49,48 +49,61 @@
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
             }
-
-            #weather {
+            
+            .uom {
                 position: relative;
-                top: -70px;
+                top: -68px;
+                left: 54px;
+                font-size: 76px;
+                background: -webkit-linear-gradient(rgb(255, 255, 255) 30%, rgba(117,96,244,1) 100%);
+                -webkit-background-clip: text;
+                text-transform: uppercase;
+                -webkit-text-fill-color: transparent;
+            }
+
+            #weather i {
+                position: relative;
+                top: -90px;
                 font-size: 130px;
                 background: -webkit-linear-gradient(rgb(255, 255, 255) 10%, rgb(133, 189, 253) 55%);
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
-            }
-
-            
+            }            
         </style>
         
     </head>
     <body class="text-white d-flex flex-column justify-content-center">
 
-        <div id="content" class="d-flex flex-column container-md">
+        <div id="hidden" style="display: none;">
 
-            
-            <p id="city" class="h4 align-self-center font-weight-bold p-2">
-                City
-            </p>
+            <div id="content" class="d-flex flex-column container-md text-center">
 
-            <p id="state" class="align-self-center">
-                State
-            </p>
-            
-            <p id="temperature" class="align-self-center">
-                Temperature
-            </p>
+                <p id="city" class="h4 font-weight-bold p-2">
+                    City
+                </p>
 
-            <p class="p-4 align-self-center">
+                <p id="state">
+                    State
+                </p>
+                
+                <p id="temperature">
+                    Temperature
+                </p>
 
-                <i id="weather" class="fas fa-bolt"></i>
+                <p id="weather" class="p-0 m-0">
+                    <i class="fas fa-bolt"></i>
+                </p>
 
-            </p>
-            
-            <!-- <p class="p-3 wind-speed align-self-center" style="font-style: italic;">Wind Speed</p> -->
+                <button class="btn btn-link text-white toggle ">Switch to Fahrenheit</button>
+                
+                <!-- <p class="p-3 wind-speed align-self-center" style="font-style: italic;">Wind Speed</p> -->
+
+            </div>
 
         </div>
 
         <!-- MY SCRIPTS -->
+        
         <script src="./scripts.js"></script>
 
     </body>

@@ -31,9 +31,19 @@ img {
 }
 
 .slide {
-  height: 420px;
+  position: relative;
+  height: 50vh;
   width: 100%;
   flex-shrink: 0;
+}
+
+.slide-1-text {
+    position: absolute;
+    color: white;
+    z-index: 1;
+    bottom: 50px;
+    font-size: 24px;
+    font-weight: bold;
 }
 
 .slide img {
