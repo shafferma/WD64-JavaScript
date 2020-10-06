@@ -237,8 +237,12 @@ label {
 
 .portfolio-item p {
   text-align: center;
-  color: #42047e;
-  font-weight: 500;
+  color:  black;
+  font-weight: 600;
+}
+
+.portfolio-header:hover {
+  
 }
 
 .social img {
