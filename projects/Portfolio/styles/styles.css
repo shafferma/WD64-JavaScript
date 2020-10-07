@@ -16,7 +16,7 @@ img {
 }
 
 
-slider styles
+/*slider styles*/
 
 .slider {
   overflow: hidden;
@@ -239,10 +239,6 @@ label {
   text-align: center;
   color:  black;
   font-weight: 600;
-}
-
-.portfolio-item a {
-text-decoration-color: black;
 }
 
 .social img {
