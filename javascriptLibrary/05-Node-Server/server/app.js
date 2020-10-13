@@ -17,9 +17,6 @@ let app = express(); //2
 let test = require('./controllers/testcontroller')
 let sequelize = require('./db');
 
-
-app.use('/test', test)
-
 app.get('/api/test', function(req, res){
     res.send("This is data from the /api/test endpoint. It's from the server.")
 });
@@ -29,22 +26,11 @@ sequelize.authenticate().then(
         console.log('Connected to workoutlog postgres database');
         sequelize.sync(); // tip: pass in{force: true} for resetting tables
     },
- 
 );
 
-// sequelize.authenticate()
-//     .then(async () => {
-//         console.log('DB CONNECTED');
-//         return sequelize.sync();
-//     })
-//     .then(async () => {
-//         console.log('DB CONNECTED');
-//         return sequelize.sync();
-//     })
-//     .catch(async () => {
-//         console.log('DB CONNECTED');
-//         return sequelize.sync();
-//     })
+app.use(express.json());
+
+app.use('/test', test)
 
 //3             //4
 app.listen(3000, function() {

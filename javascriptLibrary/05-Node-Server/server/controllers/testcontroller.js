@@ -22,6 +22,7 @@ The Router() method will return a router object for us. You can read about it mo
 let express = require('express'); //1
 let router = express.Router(); //2
 let sequelize = require('../db');
+let TestModel = sequelize.import('../models/test')
 
 /*****************
  * Controller Method #1: Simple Response
@@ -29,6 +30,52 @@ let sequelize = require('../db');
 router.post('/one', function(req, res){
     res.send("Test 1 went through!")
 });
+
+/*****************
+ * Controller Method #2: Persisting Data
+ ********************/
+
+ router.post('/two', function (req, res){
+     let testData = "Test data for endpoint two";
+
+     TestModel 
+     .create({
+         testdata: testData
+     }).then(dataFromDatabase => {
+         res.send("Test two went through!")
+     })
+ });
+
+ /*****************
+ * Controller Method #2: Persisting Data
+ ********************/
+
+ router.post('/three', function (req, res){
+     let testData = req.body.testdata.item;
+
+     TestModel
+     .create({
+         testdata: testData
+     })
+     res.send("Test three went through!")
+     console.log("Test three went through!")
+ });
+
+ /*****************
+ * Controller Method #3: req.body
+ ********************/
+
+ router.post('/three', function (req, res) {
+     let testData = req.body.testdata.item;
+
+     TestModel
+     .create({
+         testdata: testData
+     })
+     res.send("Test three went through!")
+     console.log("Test three went through!")
+ });
+
 module.exports = router;
 // //3     //4     //5         //6
 // router.get('/', function(req, res){
