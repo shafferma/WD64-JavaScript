@@ -12,27 +12,28 @@
 // this will find all instances of node running on my computer and attempt to terminate them
 // then run my script again
 
-let express = require('express'); //1
+const { response } = require("express");
+let express = require("express"); //1
 let app = express(); //2
-let test = require('./controllers/testcontroller')
-let sequelize = require('./db');
+let test = require("./controllers/testcontroller")
+let sequelize = require("./db");
 
-app.get('/api/test', function(req, res){
-    res.send("This is data from the /api/test endpoint. It's from the server.")
+app.get("/api/test", function(request, response){
+    response.send("This is data from the /api/test endpoint. It's from the server.")
 });
 
 sequelize.authenticate().then(
     function() { //12
-        console.log('Connected to workoutlog postgres database');
+        console.log("Connected to workoutlog postgres database");
         sequelize.sync(); // tip: pass in{force: true} for resetting tables
     },
 );
 
 app.use(express.json());
 
-app.use('/test', test)
+app.use("/test", test)
 
 //3             //4
 app.listen(3000, function() {
-    console.log('Hey you!!!')//5
+    console.log("Hey you!!!")//5
 });
