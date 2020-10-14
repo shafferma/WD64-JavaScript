@@ -12,7 +12,8 @@
 // this will find all instances of node running on my computer and attempt to terminate them
 // then run my script again
 
-const { response } = require("express");
+require("dotenv").config();
+
 let express = require("express"); //1
 let app = express(); //2
 let test = require("./controllers/testcontroller")
@@ -32,6 +33,8 @@ sequelize.authenticate().then(
 app.use(express.json());
 
 app.use("/test", test)
+
+app.use("/api/user", require("./controllers/usercontrollers"));
 
 //3             //4
 app.listen(3000, function() {
