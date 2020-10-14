@@ -8,10 +8,10 @@
 
 // Current Goal: Test Controller
 
-const {request} = require("express");
-
 const TestController = require("./TestController");
+const UsersController = require("./UsersController");
 
 module.exports = {
-    test: TestController
-}
+    test: TestController,
+    users: UsersController,
+};

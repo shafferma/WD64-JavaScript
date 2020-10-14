@@ -1,9 +1,12 @@
 const Express = require("express");
+
+const applicationSequelizeObject = require("./db");
 const applicationControllers = require("./controllers/index");
+
 const expressApplicationObject = new Express();
 
-expressApplicationObject.use('/test', applicationControllers.test)
-
+expressApplicationObject.use("/test", applicationControllers.test);
+expressApplicationObject.use("/users", applicationControllers.users);
 
 expressApplicationObject.get("/", (request, response) => {
     console.log("[server: Root GET request received");
@@ -23,26 +26,6 @@ expressApplicationObject.get("/", (request, response) => {
 // Otherwise the message will be:
 // "<name>, you will be an adult soon"
 
-// router.post('/challenge', function(request, response){
-
-//     let name = 'Ashley';
-//     let age = 27;
-//     let user = '';
-
-//     user.create({
-//       username: name,
-//       userage: age
-
-//     }).then(
-//         function message() {
-//             if(age < 18){
-//                 response.send(name, "You are an adult!")
-//             } else{
-//                 response.send(name, "you will be an adult soon!")
-//             }
-//         }
-//     );
-// });
 
 // JSON in a request is a STRING
 
@@ -55,10 +38,28 @@ expressApplicationObject.post("/challenge", (request, response) => {
         ? `${data.name}, you are an adult!` 
         : `${data.name}, you will be an adult`;
 
-    response.send("challenge route hit");
+    response.send("message");
 });
 
-expressApplicationObject.listen(9001, () => {
-    console.log("[server]: App is listening on port 9001")
+
+
+// Startup Procedure:
+// Verify the connection to the Postgres DB
+// Synchronize our Database with our Models
+// Listen on our specified port
+
+applicationSequelizeObject.authenticate()
+    .then(() => applicationSequelizeObject.sync())
+    .then(() => {
+        expressApplicationObject.listen(9001, () => {
+        console.log("[server]: App is listening on port 9001")
+        });
+    })
+    .catch((err) => {
+        console.log(err);
     });
+
+
+
+
 

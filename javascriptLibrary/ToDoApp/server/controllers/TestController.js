@@ -9,6 +9,4 @@ testControllerRouter.get("/", (request, response) => {
     response.send(message);
 });
 
-module.exports = {
-    test: TestControllerRouter,
-};
+module.exports = testControllerRouter;
