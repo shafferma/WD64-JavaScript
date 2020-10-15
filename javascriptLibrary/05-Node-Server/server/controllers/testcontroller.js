@@ -6,10 +6,31 @@ let TestModel = sequelize.import("../models/test")
 /*****************
  * Controller Method #1: Simple Response
  ********************/
-router.post("/one", function(request, response){
-    response.send("Test 1 went through!")
+/***************************
+ * GET: /one
+ ***************************/
+router.get("/one", function(request, response) {
+    
+    TestModel
+    .findAll ({
+        attributes: ["id", "testdata"]
+    })
+    .then(
+        function findAllSuccess(data) {
+            console.log("Controller data:", data);
+            response.json(data);
+        },
+        function findAllError(err){
+            response.send(500, err.message);
+        }
+    );
 });
 
+
+router.post("/one", function(request, response){
+    // TODO :: figure this out Ashley
+    // response.send("Test 1 went through!");
+});
 /*****************
  * Controller Method #2: Persisting Data
  ********************/
@@ -131,24 +152,5 @@ router.post("/seven", function (request, response){
 router.get("/helloclient", function (request, response) {
     response.send("This is a message from the server to the client.")
 })
-/***************************
- * GET: /one
- ***************************/
-router.get("./one", function(request, response) {
-    
-    TestModel
-    .findAll ({
-        attributes: ["id", "testdata"]
-    })
-    .then(
-        function findAllSuccess(data) {
-            console.log("Controller data:", data);
-            response.json(data);
-        },
-        function findAllError(err){
-            response.send(500, err.message);
-        }
-    );
-});
 
 module.exports = router;

@@ -17,6 +17,7 @@ require("dotenv").config();
 let express = require("express"); //1
 let app = express(); //2
 let test = require("./controllers/testcontroller")
+let authTest = require("./controllers/authtestcontroller");
 let sequelize = require("./db");
 
 app.get("/api/test", function(request, response){
@@ -33,10 +34,18 @@ sequelize.authenticate().then(
 app.use(express.json());
 
 app.use(require("./middleware/headers"));
-
+/****************
+ * EXPOSED ROUTES
+ ***************/
 app.use("/test", test)
-
 app.use("/api/user", require("./controllers/usercontrollers"));
+
+/****************
+ * PROTECTED ROUTES
+ ***************/
+
+ app.use(require("./middleware/validate-session"));
+ app.use("authtest", authTest);
 
 //3             //4
 app.listen(3000, function() {

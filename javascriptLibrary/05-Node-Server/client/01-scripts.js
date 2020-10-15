@@ -5,11 +5,11 @@ function fetchHelloDataFromAPI() {
             "Content-Type": "application/json"
         })
     })
-        .then(function(response){
+        .then(function (response) {
             console.log("Fetch response:", response)
             return response.text();
         })
-        .then(function (text){
+        .then(function (text) {
             console.log(text);
         });
 }
@@ -18,46 +18,46 @@ function fetchHelloDataFromAPI() {
  * POST long hand: /one
  ************************/
 
- function postToOne() {
-     let url = "http://localhost:3000/test/one";
-
-     fetch(url, {
-         method: "POST",
-         headers: new Headers({
-             "Content-Type": "application/json"
-         })
-     }) .then(
-         function(response){
-             return response.text()
-         })
-        .catch(
-            function(error){
-                console.error("Error:", error)
-            })
-        .then(
-            function(response){
-                console.log("Success:", response);
-            })
- }
-
- /*************************
- * 3 POST /one : Arrow Function
- ************************/
-function postToOneArrow(){
+function postToOne() {
     let url = "http://localhost:3000/test/one";
 
     fetch(url, {
         method: "POST",
-        headers: new Headers ({
+        headers: new Headers({
+            "Content-Type": "application/json"
+        })
+    }).then(
+        function (response) {
+            return response.text()
+        })
+        .catch(
+            function (error) {
+                console.error("Error:", error)
+            })
+        .then(
+            function (response) {
+                console.log("Success:", response);
+            })
+}
+
+/*************************
+* 3 POST /one : Arrow Function
+************************/
+function postToOneArrow() {
+    let url = "http://localhost:3000/test/one";
+
+    fetch(url, {
+        method: "POST",
+        headers: new Headers({
             "Content-Type": "application/json"
         })
     }).then(response => response.text())
-    .catch(error => console.error("Error:", error))
-    .then(response => console.log("Success:", response));
+        .catch(error => console.error("Error:", error))
+        .then(response => console.log("Success:", response));
 }
 
 function postData() {
-    let content = { testdata: { item: "This was saved!"}};
+    let content = { testdata: { item: "This was saved!" } };
 
     let testDataAfterFetch = document.getElementById("test-data");
     let createdAtAfterFetch = document.getElementById("created-at");
@@ -65,48 +65,53 @@ function postData() {
     fetch("http://localhost:3000/test/seven", {
         method: "POST",
         headers: {
-            "Content-Type" : "application/json"
+            "Content-Type": "application/json"
         },
         body: JSON.stringify(content)
     })
-    .then(response => response.json())
-    .then(function (text) {
-        console.log(text);
+        .then(response => response.json())
+        .then(function (text) {
+            console.log(text);
 
-        testDataAfterFetch.innerHTML = text.testdata.testdata;
-        createdAtAfterFetch.innerHTML = text.testdata.createdAt;
-    })
+            testDataAfterFetch.innerHTML = text.testdata.testdata;
+            createdAtAfterFetch.innerHTML = text.testdata.createdAt;
+        })
 }
- /*************************
- * 4 GET FROM /ONE - Display Data
- ************************ */
+/*************************
+* 4 GET FROM /ONE - Display Data
+************************ */
 
- function fetchFromOneDisplayData() {
-     let url = "http://localhost:3000/test/one";
-     let dataView = document.getElementById("display-one");
+function fetchFromOneDisplayData() {
+    let url = "http://localhost:3000/test/one";
+    let dataView = document.getElementById("display-one");
 
-     fetch(url, {
-         method: "GET",
-         headers: new Headers({
-             "Content-Type": "application/json"
-         })
-     }).then(
-         function(response){
-             return response.json()
-         })
-    .catch(
-        function(error){
-            console.error("Error:", error)
-            })
+    fetch(url, {
+        method: "GET",
+        headers: new Headers({
+            "Content-Type": "application/json"
+        })
+    })
     .then(
-        function(results){
-             let myList = document.querySelector("#getjson");
-            
-            for (r of results){
+        function (response) {
+            return response.json()
+        }
+    )
+    .then(
+        function (results) {
+            let myList = document.querySelector("#getjson");
+            console.log(results)
+
+            for (r of results) {
                 console.log("Response:", r.testdata);
                 let listItem = document.createElement("li");
                 listItem.innerHTML = r.testdata;
                 myList.appendChild(listItem);
             }
-        })
- }
+        }
+    )
+    .catch(
+        function (error) {
+            console.error("Error:", error)
+        }
+    )
+}
