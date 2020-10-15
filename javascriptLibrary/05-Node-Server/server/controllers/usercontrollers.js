@@ -34,7 +34,8 @@ router.post("/createuser", function (request, response){
 })
 
 router.post('/signin', function(request, response){
-    User.findOne( { where: { username: request.body.user.username}}).then(
+    User.findOne( { where: { username: request.body.user.username}})
+        .then(
         function(user) {
             if (user) {
                 response.json(user);
