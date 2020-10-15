@@ -10,7 +10,7 @@ applicationDatabaseObject.define("user", {
     password: {
         type: DataTypes.STRING,
         allowNull: false
-    }
+    },
 });
 
 module.exports = User;

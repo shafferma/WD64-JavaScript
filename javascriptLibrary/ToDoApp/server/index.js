@@ -5,6 +5,8 @@ const applicationControllers = require("./controllers/index");
 
 const expressApplicationObject = new Express();
 
+expressApplicationObject.use(Express.json());
+
 expressApplicationObject.use("/test", applicationControllers.test);
 expressApplicationObject.use("/users", applicationControllers.users);
 
@@ -26,22 +28,17 @@ expressApplicationObject.get("/", (request, response) => {
 // Otherwise the message will be:
 // "<name>, you will be an adult soon"
 
-
 // JSON in a request is a STRING
 
-expressApplicationObject.use(Express.json());
+// expressApplicationObject.post("/challenge", (request, response) => {
+//     let data = request.body;
+//     let message = 
+//         data.age >= 18 
+//         ? `${data.name}, you are an adult!` 
+//         : `${data.name}, you will be an adult`;
 
-expressApplicationObject.post("/challenge", (request, response) => {
-    let data = request.body;
-    let message = 
-        data.age >= 18 
-        ? `${data.name}, you are an adult!` 
-        : `${data.name}, you will be an adult`;
-
-    response.send("message");
-});
-
-
+//     response.send("message");
+// });
 
 // Startup Procedure:
 // Verify the connection to the Postgres DB

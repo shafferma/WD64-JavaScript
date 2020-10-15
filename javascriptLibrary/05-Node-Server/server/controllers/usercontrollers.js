@@ -38,10 +38,24 @@ router.post('/signin', function(request, response){
         .then(
         function(user) {
             if (user) {
-                response.json(user);
+                bcrypt.compare(request.body.password, user.passwordhash, function (err, matches) {
+                    if (matches) {
+                        let token = jwt.sign({id: user.id}, process.env.JWT_SECRET, {expiresIn: 60*60*24});
+                        response.json({
+                            user: user,
+                            message: "successfully authenticated",
+                            sessionToken: token
+                        });
+                    }else {
+                        response.status(502).send({error: "you failed, yo"});
+                    }
+                });
             } else {
-                response.status(500).send({ error: "you failed, yo"});
+                response.status(500).send({ error: "failed to authenticate"});
             }
+        },
+        function (err) {
+            response.status(501).send({error: "you failed, yo"});
         }
     );
 });

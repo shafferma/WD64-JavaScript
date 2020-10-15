@@ -1,4 +1,8 @@
-const { Router, request, response } = require("express");
+// const { Router, request, response } = require("express");
+const { Router } = require("express");
+const bcrypt = require ()
+
+const { user } = require("../models/index");
 
 const UsersControllerRouter = Router();
 
@@ -20,6 +24,26 @@ UsersControllerRouter.post("/register", (request, response) => {
     // !!!! Use that data to craft a USER
     // !!!! Save the USER to the db
     // Respond with the status of the action 
+
+    let { email, password } = request.body;
+    let newUser = user.build({
+        email: email, 
+        password: bcrypt.hashSync(password, 12),
+    });
+
+    newUser.save()
+        .then(() => {
+        console.log("[server]: The new user was created");
+        response.json({
+            message: "User successfully created",
+        });
+    })
+    .catch(error => {
+        console.log(error);
+        response.status(500).json({
+            message: "Failed to create user"
+        });
+    });
 
     response.json({
         message: "Hello from the user Register route!",

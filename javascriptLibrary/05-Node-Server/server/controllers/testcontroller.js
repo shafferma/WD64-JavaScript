@@ -125,5 +125,30 @@ router.post("/seven", function (request, response){
     );
 });
 
+/***************************
+ * GET: Get simple message from server
+ ***************************/
+router.get("/helloclient", function (request, response) {
+    response.send("This is a message from the server to the client.")
+})
+/***************************
+ * GET: /one
+ ***************************/
+router.get("./one", function(request, response) {
+    
+    TestModel
+    .findAll ({
+        attributes: ["id", "testdata"]
+    })
+    .then(
+        function findAllSuccess(data) {
+            console.log("Controller data:", data);
+            response.json(data);
+        },
+        function findAllError(err){
+            response.send(500, err.message);
+        }
+    );
+});
 
 module.exports = router;
