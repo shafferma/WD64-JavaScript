@@ -5,7 +5,9 @@ let AuthTestModel = sequelize.import("../models/authtest");
 /* ***************************
 * GET ALL ITEMS FOR INDIVIDUAL USER
 *************************** */
-router.get("/getall", function(request, response){
+router.get("/getall", );
+
+const getAll = (request, response) => {
     let userid = request.user.id;
     AuthTestModel
         .findAll({
