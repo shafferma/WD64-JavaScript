@@ -4,7 +4,6 @@ let sequelize = require("../db");
 let User = sequelize.import("../models/user");
 let bcrypt = require('bcryptjs');
 let jwt = require("jsonwebtoken");
-const { response } = require("express");
 
 /****************
  ** Create User Endpoint: Starter** 
