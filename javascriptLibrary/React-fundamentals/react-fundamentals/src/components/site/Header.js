@@ -8,7 +8,7 @@ const Header = () => {
             <NavbarBrand href="/">React Library</NavbarBrand>
             <Nav className="ml-auto" navbar>
                 <NavItem>
-                    <NavLink href="https://github.com/shafferma/1150-work-out-server">
+                    <NavLink href="https://https://github.com/shafferma/WD64-JavaScript/javascriptLibrary/ToDoApp/server">
                         Github
                     </NavLink>
                 </NavItem>
