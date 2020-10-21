@@ -22,9 +22,11 @@ anonDude.status();
 
 //super
 class BronzeLevelUser extends User {
-    //We add the ccinfo property the user here.
+    //if you're goin gto use 'this in your constructor, you
+    // must have super that points to the parent constructor.
     constructor(username, password, ccinfo){
-
+        super(username, password);
+        //The 'this' keyword wouldn't work without super.
         this.type = "Bronze User";
         this.ccinfo = ccinfo;
     }

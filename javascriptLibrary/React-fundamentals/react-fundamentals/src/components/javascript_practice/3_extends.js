@@ -26,7 +26,7 @@ anonDude.greet();
 anonDude.status();
 
 //Instance of TrialUser class
-let TrialUser = new TrialUser("Paul");
+let trialUser = new TrialUser("Paul");
 trialUser.greet();
 trialUser.trialEnding();
 trialUser.status();
