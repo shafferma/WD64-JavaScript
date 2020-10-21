@@ -20,3 +20,23 @@ const JSXRules = () => {
 };
 
 export default JSXRules;
+
+const NormalComponent = () => {
+    return (
+        <div style={{border: '2px solid black'}}>
+            <h1>Normal Function Component</h1>
+            <p>This was constructed with JSX in the return</p>
+            <img src="https://pbs.twimg.com/media/DOzL82mXkAA0zFx.jpg" />
+        </div>
+    );
+};
+
+const CreateElementComponent = () => {
+    return (
+        React.createElement('div', {style: {border: '2px solid black'}},
+        React.createElement('h1', null, 'CreateElement Component'),
+        React.createElement('p', null, 'This was constructed with CreateElement calls in the return.'),
+        React.createElement('img', {src: 'https://cdn-images-1.medium.com/max/1200/1*jJZHFQmhkq_7ohn18KrMhA.png '}, null)
+        )
+    );
+};

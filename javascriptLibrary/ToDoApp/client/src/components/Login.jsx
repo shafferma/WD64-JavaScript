@@ -7,7 +7,7 @@ import { Form, Label, FormGroup, Button, Input } from 'reactstrap';
 //Challenge:
 //Create 2 state variables, and wire up the two input fields with the state variables
 
-const LoginComponent = () => {
+const LoginComponent = (props) => {
 
     //      var         function
     const [ email, setEmail ] = useState('');
@@ -21,9 +21,33 @@ const LoginComponent = () => {
         setPassword(event.target.value);
     };
 
+    const handleLoginSubmit = (event) => {
+        event.preventDefault();
+     // If both the email and password are present
+     // send them off to the api to verify if it is a user
+     // if the response is OK, take the token from the response and call the props.authenticateUser function with that token
+     // if the response is NOT OK, display an error message, but do nothing.
+     if(email && password)  {
+         fetch('http://localhost:8080/login', {
+             method: "POST",
+             headers: {
+                 "Content-Type": "application/json",
+             },
+             body: JSON.stringify({
+                 email: email,
+                 password: password
+             }),
+         }).then(response => response.json())
+         .then(body => {
+             props.authenticateUser(body.token);
+         })
+         .catch(error => console.log(error));
+        }
+    };
+
     return (
         <div>
-           <Form>
+           <Form onSubmit={handleLoginSubmit}>
                <h3>Login</h3>
                <FormGroup>
                    <Label htmlFor="email">Email:</Label>
@@ -34,8 +58,6 @@ const LoginComponent = () => {
                    <Input onChange={triggerPasswordChange} value={password} id="example" type="password" name="password" /> 
                </FormGroup>
                <Button>Login</Button>
-               <p>{email}</p>
-               <p>{password}</p>
            </Form>
         </div>
     );

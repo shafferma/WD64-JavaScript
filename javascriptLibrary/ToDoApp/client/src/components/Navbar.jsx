@@ -5,6 +5,7 @@
 
 import React, { useState } from 'react';
 import { Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem } from 'reactstrap';
+import {Link } from 'react-router-dom';
 
 const NavbarComponent = () => {
     //      var         function
@@ -23,7 +24,7 @@ const NavbarComponent = () => {
                         <p>Lists</p>
                     </NavItem>
                     <NavItem>
-                        <p>Login</p>
+                        <Link to="/login">Login</Link>
                     </NavItem>
                 </Nav>
             </Collapse>
