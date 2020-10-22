@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createElement } from 'react';
 
 const JSXRules = () => {
     return (
@@ -14,6 +14,8 @@ const JSXRules = () => {
                     <dd>You can write in vanilla JS, but most sane people use JSX</dd>
                 </dl>
                 <hr />
+                <NormalComponent />
+                <CreateElementComponent />
             </div>
         </div>
     );
@@ -26,7 +28,7 @@ const NormalComponent = () => {
         <div style={{border: '2px solid black'}}>
             <h1>Normal Function Component</h1>
             <p>This was constructed with JSX in the return</p>
-            <img src="https://pbs.twimg.com/media/DOzL82mXkAA0zFx.jpg" />
+            <img src="https://pbs.twimg.com/media/DOzL82mXkAA0zFs.jpg" />
         </div>
     );
 };
