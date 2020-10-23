@@ -1,6 +1,7 @@
 // const React = require("react"); - same thing below
 import React, { useState } from 'react';
 import { Form, Label, FormGroup, Button, Input } from 'reactstrap';
+import "../styles/Login.css";
 
 //TODO: Build functionality to send info to the api
 
@@ -16,7 +17,7 @@ const LoginComponent = (props) => {
         setEmail(event.target.value);
     };
 
-    const triggerPasswordChange = (event) => {
+    const triggerPasswordInputChange = (event) => {
         setPassword(event.target.value);
     };
 
@@ -27,7 +28,7 @@ const LoginComponent = (props) => {
      // if the response is OK, take the token from the response and call the props.authenticateUser function with that token
      // if the response is NOT OK, display an error message, but do nothing.
      if(email && password)  {
-        fetch('http://localhost:3000/user/login', {
+        fetch('http://localhost:8080/user/login', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -46,7 +47,7 @@ const LoginComponent = (props) => {
 
     return (
         <div>
-           <Form onSubmit={handleLoginSubmit}>
+           <Form className="authForm" id="loginForm" onSubmit={handleLoginSubmit}>
                <h3>Login</h3>
                <FormGroup>
                    <Label htmlFor="email">Email:</Label>
@@ -54,7 +55,7 @@ const LoginComponent = (props) => {
                </FormGroup>
                <FormGroup>
                    <Label htmlFor="password">Password:</Label>
-                   <Input onChange={triggerPasswordChange} value={password} id="example" type="password" name="password" /> 
+                   <Input onChange={triggerPasswordInputChange} value={password} id="password" type="password" name="password" /> 
                </FormGroup>
                <Button>Login</Button>
            </Form>

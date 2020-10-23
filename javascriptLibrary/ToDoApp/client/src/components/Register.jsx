@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {Form, Button, Input, FormGroup, Label} from 'reactstrap';
+import "../styles/Register.css"
 
 const RegisterComponent = (props) => {
    
@@ -49,7 +50,7 @@ const RegisterComponent = (props) => {
 
    
     return (
-        <div id="registerForm">
+        <div className="authForm" id="registerForm">
             <Form onSubmit={handleUserRegistration}>
                 <h3>Registration here</h3>
             <FormGroup>
@@ -58,7 +59,7 @@ const RegisterComponent = (props) => {
             </FormGroup>
             <FormGroup>
                 <Label htmlFor="registerPassword">Password:</Label>
-                <Input id="registerPassword" type="password" name="registerPassword" name="registerPassword" onChange={triggerPasswordInputChange} value="{password}" />
+                <Input id="registerPassword" type="password" name="registerPassword" onChange={triggerPasswordInputChange} value="{password}" />
             </FormGroup>
             <FormGroup>
                 <Label htmlFor="registerConfirmPassword">Password Confirm:</Label>

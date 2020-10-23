@@ -21,18 +21,16 @@ const NavbarComponent = (props) => {
             <Collapse isOpen={isOpen} navbar>
                 <Nav className="ml-auto" navbar>
                     {
-                        props.isLoggedIn    
-                        ? (
+                        props.isLoggedIn ? (
                             <>
                                <NavItem>
-                                <p>Lists</p>
+                                <Link to="/mylists">My Lists</Link>
                                 </NavItem>
                                 <NavItem>
                                 <p>Logout</p>
                                 </NavItem>
                             </>
-                        )
-                        : (
+                        ) : (
                             <>
                                 <NavItem>
                                 <p>Lists</p>
@@ -40,6 +38,7 @@ const NavbarComponent = (props) => {
                                 <NavItem>
                                 <Link to="/login">Login</Link>
                                 </NavItem>
+                                {/* Add a register button */}
                                 <NavItem>
                                 <Link to="/register">Register</Link>
                                 </NavItem>

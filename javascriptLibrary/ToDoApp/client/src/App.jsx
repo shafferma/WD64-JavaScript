@@ -5,7 +5,7 @@ import './App.css';
 import NavbarComponent from "./components/Navbar";
 import LoginComponent from "./components/Login";
 import RegisterComponent from "./components/Register";
-
+import ListsComponent from "./components/Lists";
 
 function App() {
   
@@ -29,7 +29,7 @@ function App() {
     window.localStorage.setItem("authToken", token);
     //Challenge: Use the "State Change" function to set the new token in the state
     changeAuthJWT(token);
-  }
+  };
   
   
   return (
@@ -41,7 +41,10 @@ function App() {
             <LoginComponent authenticationUser={authenticationUser} />
           </Route>
           <Route exact path="/register">
-            <RegisterComponent />
+            <RegisterComponent authenticationUser={authenticationUser}  />
+          </Route>
+          <Route exact path="mylists">
+            <ListsComponent token={authenticationJWT}/>
           </Route>
         </Switch>
     </div>
