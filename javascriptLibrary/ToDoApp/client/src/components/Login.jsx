@@ -8,7 +8,6 @@ import { Form, Label, FormGroup, Button, Input } from 'reactstrap';
 //Create 2 state variables, and wire up the two input fields with the state variables
 
 const LoginComponent = (props) => {
-
     //      var         function
     const [ email, setEmail ] = useState('');
     const [ password, setPassword ] = useState('');
@@ -28,22 +27,22 @@ const LoginComponent = (props) => {
      // if the response is OK, take the token from the response and call the props.authenticateUser function with that token
      // if the response is NOT OK, display an error message, but do nothing.
      if(email && password)  {
-         fetch('http://localhost:8080/login', {
-             method: "POST",
-             headers: {
-                 "Content-Type": "application/json",
-             },
-             body: JSON.stringify({
-                 email: email,
-                 password: password
-             }),
-         }).then(response => response.json())
-         .then(body => {
-             props.authenticateUser(body.token);
-         })
-         .catch(error => console.log(error));
-        }
-    };
+        fetch('http://localhost:3000/user/login', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                email: email,
+                password: password
+            }),
+        }).then(response => response.json())
+        .then(body => {
+            props.authenticateUser(body.token);
+        })
+        .catch(error => console.log(error));
+       }
+   };
 
     return (
         <div>

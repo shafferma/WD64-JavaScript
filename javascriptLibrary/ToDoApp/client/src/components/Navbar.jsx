@@ -4,10 +4,10 @@
 // 2 link: Lists, Login
 
 import React, { useState } from 'react';
-import { Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem } from 'reactstrap';
+import { Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem, Button } from 'reactstrap';
 import {Link } from 'react-router-dom';
 
-const NavbarComponent = () => {
+const NavbarComponent = (props) => {
     //      var         function
     const [ isOpen, changeIsOpen ] = useState(false);
 
@@ -20,13 +20,32 @@ const NavbarComponent = () => {
             <NavbarToggler onClick={toggleNavbarMenu} />
             <Collapse isOpen={isOpen} navbar>
                 <Nav className="ml-auto" navbar>
-                    <NavItem>
-                        <p>Lists</p>
-                    </NavItem>
-                    <NavItem>
-                        <Link to="/login">Login</Link>
-                    </NavItem>
-                </Nav>
+                    {
+                        props.isLoggedIn    
+                        ? (
+                            <>
+                               <NavItem>
+                                <p>Lists</p>
+                                </NavItem>
+                                <NavItem>
+                                <p>Logout</p>
+                                </NavItem>
+                            </>
+                        )
+                        : (
+                            <>
+                                <NavItem>
+                                <p>Lists</p>
+                                </NavItem>
+                                <NavItem>
+                                <Link to="/login">Login</Link>
+                                </NavItem>
+                                <NavItem>
+                                <Link to="/register">Register</Link>
+                                </NavItem>
+                            </>
+                        )}
+                  </Nav>
             </Collapse>
             </Navbar>
         </div>
